@@ -63,25 +63,19 @@ The models are evaluated using the **Area Under the Receiver Operating Character
 
 ## **Results**
 
-### **Best Model: XGBoost**
-- **H1N1 Vaccine**:
-  - AUC Score (Grid Search): **0.8668**
-  - Best Hyperparameters:
-    - `gamma`: 1
-    - `learning_rate`: 0.1
-    - `max_depth`: 3
-    - `min_child_weight`: 3
-    - `n_estimators`: 300
-    - `subsample`: 1
+### **Best Models**
+- **For H1N1 Vaccine Prediction**:
+  - **Best Model**: XGBoost
+  - **AUC Score**: **0.8668**
+  - XGBoost consistently provided the highest AUC score for this target variable due to its superior handling of structured data.
 
-- **Seasonal Vaccine**:
-  - AUC Score (Grid Search): **0.8568**
-  - Best Hyperparameters:
-    - `gamma`: 1
-    - `learning_rate`: 0.01
-    - `max_depth`: 3
-    - `min_child_weight`: 0
-    - `n_estimators`: 900
-    - `subsample`: 0.6
+- **For Seasonal Vaccine Prediction**:
+  - **Best Model**: Ensemble Model
+  - **AUC Score**: **0.8588**
+  - The ensemble approach outperformed XGBoost for this target variable, indicating that combining multiple models improved generalization.
 
-    This project highlights the importance of preprocessing and model selection in achieving high performance for predictive tasks. XGBoost emerged as the best-performing model for both H1N1 and Seasonal vaccine prediction due to its flexibility and advanced features.
+### **Overall Performance Comparison**
+| Model              | H1N1 AUC Score | Seasonal AUC Score |
+|--------------------|----------------|--------------------|
+| XGBoost           | 0.8668         | 0.8568            |
+| Ensemble Model     | 0.8530         | 0.8588            |
